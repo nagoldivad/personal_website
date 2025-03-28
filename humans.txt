@@ -1,0 +1,24 @@
+##     ## ##     ## ##     ##    ###    ##    ##  ######      ######## ##     ## ######## 
+##     ## ##     ## ###   ###   ## ##   ###   ## ##    ##        ##     ##   ##     ##    
+##     ## ##     ## #### ####  ##   ##  ####  ## ##              ##      ## ##      ##    
+######### ##     ## ## ### ## ##     ## ## ## ##  ######         ##       ###       ##    
+##     ## ##     ## ##     ## ######### ##  ####       ##        ##      ## ##      ##    
+##     ## ##     ## ##     ## ##     ## ##   ### ##    ## ###    ##     ##   ##     ##    
+##     ##  #######  ##     ## ##     ## ##    ##  ######  ###    ##    ##     ##    ##    
+
+
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+
+# TEAM
+
+    David M. Logan -- Web Developer
+
+
+# TECHNOLOGY COLOPHON
+
+## Technologies used
+
+VS Code
+HTML5 Boilerplate (https://html5boilerplate.com/)

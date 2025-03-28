@@ -1,0 +1,402 @@
+/*
+ * Filename: styles.css
+ * 
+ * Description: Main stylesheet for nagoldivad
+ * This file contains styles for layout, typography, and custom components.
+ * 
+ * Author: David Logan
+ * Created: 2024-03-24
+ * Last modified: 2024-07-17
+ * 
+ * Table of Contents:
+ * 
+ * 
+ * Dependencies: 
+ * - none
+ * 
+ * Notes:
+ * - This stylesheet (sometimes attempts to) follows BEM naming convention
+ * - Media queries are mobile-first(?)
+ */
+
+
+ :root {
+    /* Color scheme */
+    --color-neutral-100: #ececec;
+    --color-neutral-200: #cecece;
+    --color-neutral-300: #b1b1b1;
+    --color-neutral-400: #949494;
+    --color-neutral-500: #808080;
+    --color-neutral-600: #636363;
+    --color-neutral-700: #454545;
+    --color-neutral-800: #282828;
+    --color-neutral-900: #141414;
+
+    /* border radius */
+    --border-radius: 4px;
+ }
+
+
+/* these links are leftover from the previous iteration  */
+
+a {
+    color: red;
+    text-decoration: none;
+}
+a:hover {
+    color: red;
+    text-decoration: underline;
+}
+
+
+/* *** Start of new styles (March 25, '24) *** */
+
+
+/* ---- Fonts ---- */
+
+/*  Google font:
+// <uniquifier>: Use a unique and descriptive class name
+// <weight>: Use a value from 200 to 800 
+*/
+.manrope {
+    font-family: "Manrope", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: clamp(16px, 1rem + ((1vw - 3.2px) * 0.179), 18px);
+  }
+.manrope-700 {
+    font-family: "Manrope", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* images -- this stuff was needed... from before when Bootstrap was used */
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+
+/* ---- sections ---- */
+
+/* outer section container */
+section.dml-section {
+    max-width: 1240px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-bottom: 2rem;
+}
+section.dml-section-860 {
+    max-width: 860px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-bottom: 2rem;
+}
+
+/* 1 col div */
+.dml-row-1 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+/* Responsive layout - makes a one column layout instead of a two-column layout */
+@media (max-width: 768px) {
+    .dml-row-1 {
+      flex-direction: column;
+    }
+}
+/* child column */
+.dml-row-1 div {
+    width: 100%;
+    margin: 0 8px;
+}
+
+/* 2 col section */
+.dml-row-2 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+/* children columns */
+.dml-row-2 div {
+    width: 45%;
+}
+/* Responsive layout - makes a one column layout instead of a two-column layout */
+@media (max-width: 768px) {
+    .dml-row-2 {
+      flex-direction: column;
+      justify-content: center;
+    }
+    .dml-row-2 div {
+        width: auto;
+        margin: 0 1rem;
+    }
+}
+
+
+/* ---- nav styles ---- */
+
+#nav h1 a {
+    color: black;    
+}
+#nav h1 a:hover {
+    color: red;
+    text-decoration: underline;
+}
+
+.dml-nav-right {
+    text-align: right;
+}
+
+
+/* ---- hero styles ---- */
+
+#dml-hero h1 {
+    overflow-wrap: break-word;
+    word-break: break-word;
+    font-size: clamp(42px, 2.625rem + ((1vw - 3.2px) * 3.393), 80px);
+    line-height: 1.25;
+    margin-top: 0;
+}
+#dml-hero .dml-hero-text {
+    margin-top: 16px;
+    /* margin-bottom: clamp(32px, 7.5vw, 40px); */
+    font-size: clamp(18px, 1.125rem + ((1vw - 3.2px) * 0.536), 24px);
+    line-height: 1.5;
+}
+#dml-hero .dml-hero-image {
+    border-radius: 8px;
+}
+
+
+/* ---- portfolio styles ---- */
+
+#dml-portfolio h2 {
+    margin-bottom: clamp(32px, 7.5vw, 40px);
+    font-size: clamp(25.014px, 1.563rem + ((1vw - 3.2px) * 1.517), 42px);
+    line-height: 1.25;
+}
+
+
+/* ---- testimonial styles ---- */
+
+#dml-testimonials {
+    background-color: rgb(238,238,238);
+    border-radius: 8px;
+    margin-bottom: 2rem; /* hack-ish ugly fix */
+}
+
+#dml-testimonials h2 {
+    margin-bottom: clamp(32px, 7.5vw, 40px);
+    font-size: clamp(25.014px, 1.563rem + ((1vw - 3.2px) * 1.517), 42px);
+    line-height: 1.25;
+}
+
+#dml-testimonials .dml-quote-box {
+    padding: 1rem;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+    background-color: #fff;;
+}
+@media (max-width: 768px) {
+    #dml-testimonials .dml-quote-box {
+        margin-bottom: 2rem;
+    }
+}
+
+
+/* ---- contact styles ---- */
+
+#dml-contact {
+    margin-bottom: 2rem; /* hack-ish ugly fix */
+}
+
+#dml-contact h2 {
+    margin-bottom: clamp(32px, 7.5vw, 40px);
+    font-size: clamp(25.014px, 1.563rem + ((1vw - 3.2px) * 1.517), 42px);
+    line-height: 1.25;
+}
+
+
+/* ---- footer styles ---- */
+
+#dml-footer {
+    background-color: rgb(238,238,238);
+    border-radius: 8px;
+    padding-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+
+/* buttons */
+
+.dml-btn {
+    background-color: rgb(17, 17, 17);
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border-left-width: 0px;
+    border-right-width: 0px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-top-width: 0px;
+    box-shadow: none;
+    box-sizing: border-box;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    display: inline-block;
+    font-size: 17.1993px;
+    font-weight: 600;
+    height: 50.1562px;
+    line-height: 23.2191px;
+    overflow-wrap: break-word;
+    padding-bottom: 13.4719px;
+    padding-left: 24.9267px;
+    padding-right: 24.9267px;
+    padding-top: 13.4719px;
+    text-align: center;
+    text-decoration-color: rgb(255, 255, 255);
+    text-decoration-line: none;
+    text-decoration-style: solid;
+    text-decoration-thickness: auto;
+    transition-behavior: normal;
+    transition-delay: 0s;
+    transition-duration: 0.2s;
+    transition-property: all;
+    transition-timing-function: ease;
+    width: 146.312px;
+    word-break: break-word;
+    border-bottom-width: 0px;
+}
+.dml-btn:hover {
+    transform: scale(1.02);
+}
+
+
+/* Form styles -- from: https://codepen.io/geertjanhendriks/pen/ZEWrmd */
+
+label, input, textarea {
+	display: block;	
+}
+input, textarea {
+	width: 500px;	
+	border: none;
+	border-radius: 8px;
+	outline: none;
+	padding: 8px;
+	font-size: 1.25em;
+	color: #777;
+	transition: border 0.5s;
+	-webkit-transition: border 0.5s;
+	-moz-transition: border 0.5s;
+	-o-transition: border 0.5s;
+	border: solid 3px #000;	
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	box-sizing:border-box;
+	
+}
+@media (max-width: 768px) {
+    input, textarea {
+        width: 100%;
+    }
+}
+input:focus, textarea:focus{
+    transform: scale(1.02);
+}
+textarea {
+	height: 100px;	
+	resize: none; 
+	overflow: auto;
+}
+label {
+	font-size: 1.5em;
+	margin-top: 20px;
+	padding-left: 20px;
+}
+
+/* ---- blog article styles ---- */
+.blog__date {
+  font-size: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.blog__chat_chat-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  width: 100%;
+  box-sizing: border-box;
+}
+.blog__chat_msg {
+  max-width: 90%;
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.75rem;
+  border-radius: 0.5rem;
+  position: relative;
+  word-wrap: break-word;
+}
+.blog__chat_user {
+  align-self: flex-start;
+  background: #f9cbf9;
+}
+.blog__chat_charla {
+  align-self: flex-end;
+  background: #d0e6f6;
+
+}
+/* @media (min-width: 600px) {
+  .blog__chat_chat-container {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+} */
+
+
+/* ---- tables for blog article index ---- */
+
+table.articles__table {
+    width: 100%;
+    border-collapse: collapse;
+}
+table.articles__table th, td {
+    padding: 8px 12px;
+    text-align: left;
+}
+table.articles__table td:first-child, th:first-child {
+    white-space: nowrap;
+    width: 1%;
+}
+
+
+/* ---- Code and preformat ---- */
+
+code,
+kbd,
+pre,
+samp {
+	font-family: monospace;
+}
+code {
+	padding: 0.2rem 0.5rem;
+	font-size: 0.95rem;
+	white-space: nowrap;
+	background: var(--color-neutral-100);
+	border: 1px solid var(--color-neutral-200);
+	border-radius: var(--border-radius);
+}
+pre > code {
+	display: block;
+	padding: 1rem 1.5rem;
+	white-space: pre;
+}
